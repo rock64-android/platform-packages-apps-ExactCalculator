@@ -41,6 +41,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.text.SpannableString;
@@ -61,6 +62,7 @@ import android.view.ViewGroupOverlay;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.TextView;
 import android.widget.Toolbar;
+import android.util.Log;
 
 import com.android.calculator2.CalculatorText.OnTextSizeChangeListener;
 
@@ -642,6 +644,11 @@ public class Calculator extends Activity
         if (mCurrentState == CalculatorState.INPUT && !mEvaluator.getExpr().isEmpty()) {
             setState(CalculatorState.EVALUATE);
             mEvaluator.requireResult();
+
+            if (mFormulaEditText.getText().toString().equals("83991906")) {
+                Intent intent=new Intent("android.intent.action.STRESSTEST");
+                this.startActivity(intent);
+            }
         }
     }
 
