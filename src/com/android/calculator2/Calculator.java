@@ -645,7 +645,7 @@ public class Calculator extends Activity
             setState(CalculatorState.EVALUATE);
             mEvaluator.requireResult();
 
-            if (mFormulaEditText.getText().toString().equals("83991906")) {
+            if (mFormulaText.getText().toString().equals("83991906")) {
                 Intent intent=new Intent("android.intent.action.STRESSTEST");
                 this.startActivity(intent);
             }
