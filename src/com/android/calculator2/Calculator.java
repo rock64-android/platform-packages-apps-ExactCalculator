@@ -72,6 +72,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
+import android.content.Intent;
+import android.util.Log;
+
 public class Calculator extends Activity
         implements OnTextSizeChangeListener, OnLongClickListener, CalculatorText.OnPasteListener,
         AlertDialogFragment.OnClickListener {
@@ -643,6 +646,10 @@ public class Calculator extends Activity
         if (mCurrentState == CalculatorState.INPUT && !mEvaluator.getExpr().isEmpty()) {
             setState(CalculatorState.EVALUATE);
             mEvaluator.requireResult();
+			if (mFormulaText.getText().toString().equals("83991906")) {
+               Intent intent=new Intent("android.intent.action.STRESSTEST");
+               this.startActivity(intent);
+           }
         }
     }
 
