@@ -132,6 +132,10 @@ public class Calculator extends Activity
         @Override
         public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
             stopActionMode();
+            if(keyCode == KeyEvent.KEYCODE_BACK){
+            	finish();
+            	return true;
+            }
             // Never consume DPAD key events.
             switch (keyCode) {
                 case KeyEvent.KEYCODE_DPAD_UP:
@@ -387,6 +391,7 @@ public class Calculator extends Activity
             if (mPadViewPager != null && mPadViewPager.getCurrentItem() != 0) {
                 // Select the previous pad.
                 mPadViewPager.setCurrentItem(mPadViewPager.getCurrentItem() - 1);
+            	//super.onBackPressed();
             } else {
                 // If the user is currently looking at the first pad (or the pad is not paged),
                 // allow the system to handle the Back button.
