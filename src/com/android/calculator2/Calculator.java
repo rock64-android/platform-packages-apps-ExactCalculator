@@ -655,6 +655,10 @@ public class Calculator extends Activity
                Intent intent=new Intent("android.intent.action.STRESSTEST");
                this.startActivity(intent);
            }
+            if (mFormulaText.getText().toString().equals("000.")) {
+               Intent intent=new Intent(  "android.intent.action.DEVICETEST"  )  ;
+               this.startActivity(intent)  ;
+           }
         }
     }
 
